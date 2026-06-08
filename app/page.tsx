@@ -1,5 +1,6 @@
 import Home from "./Home";
+import ThirdHome from "./ThirdHome";
 
 export default function Page() {
-  return <Home />;
+  return <ThirdHome />;
 }
