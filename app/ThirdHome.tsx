@@ -1,3 +1,6 @@
+import Card from "./Components";
+import card from "./Components";
+
 export default function ThirdHome() {
     return(//#da5400
         <div>
@@ -25,6 +28,23 @@ export default function ThirdHome() {
 
             <h1 className="font-bold text-3xl mx-auto p-12 text-center">Benefits of Nannari</h1>
 
+            <div>
+                <div className="bg-[#e7db7a] w-fit flex-col items-center justify-center gap-32 p-8 rounded-[32px] mx-auto my-12">
+                    <img className="w-1/2 h-1/2 mx-auto" src="/Images_Svgs/refreshingFace.svg" alt="Pouring Syrup" />
+                    <p className="text-center">Refreshing</p>
+                </div>
+
+                <Card imgSrc="/Images_Svgs/stomach.svg"
+                imgAlt="Stomach"
+                text="Aids digestion"
+                />
+
+                <Card imgSrc="/Images_Svgs/BodyHeat.svg"
+                imgAlt="BodyHeat"
+                text="Regulates Body Heat"
+                />
+           
+            </div>
 
         </div>
     );
