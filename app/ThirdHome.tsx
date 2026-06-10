@@ -28,8 +28,8 @@ export default function ThirdHome() {
 
             <h1 className="font-bold text-3xl mx-auto p-12 text-center">Benefits of Nannari</h1>
 
-            <div>
-                <div className="bg-[#e7db7a] w-fit flex-col items-center justify-center gap-32 p-8 rounded-[32px] mx-auto my-12">
+            <div className="flex flex-wrap justify-center gap-2">
+                <div className="bg-[#e7db7a] w-60 h-60 flex flex-col items-center justify-center gap-2 p-8 rounded-[32px] mx-auto my-12">
                     <img className="w-1/2 h-1/2 mx-auto" src="/Images_Svgs/refreshingFace.svg" alt="Pouring Syrup" />
                     <p className="text-center">Refreshing</p>
                 </div>
