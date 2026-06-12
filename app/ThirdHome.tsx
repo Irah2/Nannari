@@ -43,11 +43,13 @@ export default function ThirdHome() {
 
                 </div>
             </div>
+
+            {/* This is a single-line comment inside JSX 
         
-            <div className="bg-[#e7db7a] flex items-start justify-center gap-12 w-full h-1/2 mx-auto ">
-                <div className="mx-auto my-auto">
-                    <div className="flex flex-col items-center justify-center mt-10 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-md mx-auto text-center">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            <div className="bg-[#a1db7a] flex items-center justify-center gap-2 w-full h-1/2 mx-auto ">
+                <div className="mx-auto my-auto p-12">
+                    <div className="flex flex-col items-center justify-center my-auto p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-md mx-auto text-center">
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
                             Ready to make your own?
                         </h3>
                         <p className="text-gray-500 mb-6">
@@ -66,9 +68,14 @@ export default function ThirdHome() {
                 </div>
                 <div>
                     <img src="/Images_Svgs/Logo.svg" alt="Glass with Soda" />
+                    <h1 className="text-3xl md:text-7xl font-extrabold text-gray-900 leading-tight tracking-tight mx-auto my-4">
+                        Your Perfect Summer 
+                    </h1>
                 </div>
 
             </div>
+
+            */}
 
             <div className="p-12 outline outline-1 w-7/8 rounded-[32px] mx-auto mt-12">
                 <h1 className="font-bold text-3xl ">What is Nannari?</h1>
