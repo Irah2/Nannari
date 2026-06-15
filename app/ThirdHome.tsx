@@ -5,39 +5,51 @@ export default function ThirdHome() {
         <div>
 
   {/* Added min-h-screen to give the hero section space, you can remove this if you have specific height constraints */}
-            <div className="w-full min-h-screen bg-[#e7db7a] flex items-center justify-center pt-24 pb-16 px-6">
+            <div className="w-full h-1/2 bg-[#e7db7a] flex items-center justify-center pt-4 pb-4 px-6">
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
 
                     {/* Headline */}
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight tracking-tight mb-6">
-                        Your Perfect Summer <br />
-                    </h1>
+                    
 
                     {/* Subtext */}
 
-                <div className="flex flex-col items-center justify-center gap-6 mb-12">
-                    {/* Massive, Centered Image */}
-                    <div className="w-full max-w-5xl mb-12 flex justify-center">
-                        <img
-                            src="/Images_Svgs/Logo.svg"
-                            alt="Refreshing Glass of Soda"
+                
 
-                            className="h-auto w-full max-w-3xl object-contain drop-shadow-2xl"
-                        />
-                    </div>
+                    <div className="flex flex-col sm:flex-row-reverse items-center justify-center gap-2 sm:gap-12 mb-2">
+                        {/* Massive, Centered Image */}
 
-                    {/* Pricing & CTA - Pushed to the bottom of the stack */}
-                    <div className="flex flex-col sm:flex-row items-center gap-6 bg-white p-6 rounded-3xl shadow-xl border border-gray-100">
-                        <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                            <p className="text-sm font-semibold text-gray-400">Kit Price</p>
-                            <span className="text-4xl font-black text-gray-900">₹150</span>
+
+                        
+
+                        <div className="flex flex-wrap justify-center ">
+
+                            <div className="w-3/2 max-w-3/2 mb-2 flex justify-center">
+                                <img
+                                    src="/Images_Svgs/Logo.svg"
+                                    alt="Refreshing Glass of Soda"
+                                    className="h-auto w-full max-w-5xl object-contain drop-shadow-2xl"
+                                />
+                            </div>
+
+                            <h1 className="text-2xl text-center md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight mb-2">
+                                Your Perfect Summer 
+                            </h1>
+
                         </div>
-                        <button className="bg-[#da5400] hover:bg-[#c24800] text-white text-lg font-bold py-4 px-12 rounded-full shadow-lg transition-all duration-300 ease-in-out cursor-pointer transform hover:-translate-y-1 hover:shadow-xl active:scale-95 w-full sm:w-auto">
-                            Grab Your Bottle
-                        </button>
+
+                        <div className="flex flex-col sm:flex-col items-start gap-2 bg-[#e7db7a] p-6 md:p-12 rounded-3xl shadow-xl border border-gray-100">
+                            <div className="flex flex-col items-center sm:items-start gap-4 text-center sm:text-left">
+                                <p className="text-sm sm:text-4xl font-semibold text-black">A bottle of our signature syrup</p>
+                                <span className="text-4xl sm:text-6xl font-black text-gray-900">₹150</span>
+                            </div>
+                            <button className="bg-[#da5400] hover:bg-[#c24800] text-white text-sm font-bold py-4 px-4 rounded-full shadow-lg transition-all duration-300 ease-in-out cursor-pointer transform hover:-translate-y-1 hover:shadow-xl active:scale-95 w-full sm:w-auto">
+                                Grab Your Bottle
+                            </button>
+                        </div>
+
                     </div>
-                </div>
+
 
 
 
