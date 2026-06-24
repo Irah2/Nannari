@@ -4,17 +4,9 @@ export default function ThirdHome() {
     return(//#da5400
         <div>
 
-  {/* Added min-h-screen to give the hero section space, you can remove this if you have specific height constraints */}
+  
             <div className="w-full h-1/2 bg-[#e7db7a] flex items-center justify-center pt-4 pb-4 px-6">
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-
-
-                    {/* Headline */}
-                    
-
-                    {/* Subtext */}
-
-                
 
                     <div className="flex flex-col sm:flex-row-reverse items-center justify-center gap-2 sm:gap-12 mb-2">
                         {/* Massive, Centered Image */}
@@ -56,38 +48,6 @@ export default function ThirdHome() {
                 </div>
             </div>
 
-            {/* This is a single-line comment inside JSX 
-        
-            <div className="bg-[#a1db7a] flex items-center justify-center gap-2 w-full h-1/2 mx-auto ">
-                <div className="mx-auto my-auto p-12">
-                    <div className="flex flex-col items-center justify-center my-auto p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-md mx-auto text-center">
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
-                            Ready to make your own?
-                        </h3>
-                        <p className="text-gray-500 mb-6">
-                            Get your syrup bottle today
-                        </p>
-
-                        <div className="flex items-center gap-4">
-                            <span className="text-3xl font-extrabold text-gray-900">₹150</span>
-                            <button className="bg-[#da5400] hover:bg-[#c24800] text-white font-semibold py-3 px-8 rounded-full shadow-md
-                            transition-all duration-200 ease-in-out hover:cursor-pointer
-                            transform hover:-translate-y-1 hover:shadow-lg active:scale-95">
-                                Buy Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <img src="/Images_Svgs/Logo.svg" alt="Glass with Soda" />
-                    <h1 className="text-3xl md:text-7xl font-extrabold text-gray-900 leading-tight tracking-tight mx-auto my-4">
-                        Your Perfect Summer 
-                    </h1>
-                </div>
-
-            </div>
-
-            */}
 
             <div className="p-12 outline outline-1 w-7/8 rounded-[32px] mx-auto mt-12">
                 <h1 className="font-bold text-3xl ">What is Nannari?</h1>
