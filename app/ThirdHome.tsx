@@ -1,21 +1,88 @@
+"use client"; // Required if using Next.js App Router
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Card from "./Components";
 
-export default function ThirdHome() {
-    return(//#da5400
-        <div>
+// Register GSAP plugins
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-  
+export default function ThirdHome() {
+    const container = useRef(null);
+
+    useGSAP(() => {
+        // 1. Hero Animations (Plays immediately on load)
+        gsap.from(".gsap-hero", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+        });
+
+        // 2. About Section (Fades and slides up on scroll)
+        gsap.from(".gsap-about", {
+            scrollTrigger: {
+                trigger: ".gsap-about",
+                start: "top 85%", // Triggers when the top of the element hits 85% down the viewport
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+        });
+
+        // 3. Benefits Cards (Staggered pop-in on scroll)
+        gsap.from(".gsap-benefit", {
+            scrollTrigger: {
+                trigger: ".benefits-container",
+                start: "top 80%",
+            },
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "back.out(1.7)", // Gives a slight bounce effect
+        });
+
+        // 4. How to Make Cards (Staggered slide up on scroll)
+        gsap.from(".gsap-step", {
+            scrollTrigger: {
+                trigger: ".steps-container",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power2.out",
+        });
+
+        // 5. Bottom CTA (Pops in on scroll)
+        gsap.from(".gsap-cta", {
+            scrollTrigger: {
+                trigger: ".gsap-cta",
+                start: "top 90%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+        });
+    }, { scope: container }); // Scope limits animations to elements inside this specific component
+
+    return(
+        <div ref={container}>
+
+            {/* HERO SECTION */}
             <div className="w-full h-1/2 bg-[#e7db7a] flex items-center justify-center pt-4 pb-4 px-6">
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
                     <div className="flex flex-col sm:flex-row-reverse items-center justify-center gap-2 sm:gap-12 mb-2">
-                        {/* Massive, Centered Image */}
-
-
                         
-
-                        <div className="flex flex-wrap justify-center ">
-
+                        <div className="flex flex-wrap justify-center gsap-hero">
                             <div className="w-3/2 max-w-3/2 mb-2 flex justify-center">
                                 <img
                                     src="/Images_Svgs/Logo.svg"
@@ -27,10 +94,9 @@ export default function ThirdHome() {
                             <h1 className="text-2xl text-center md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight mb-2">
                                 Your Perfect Summer 
                             </h1>
-
                         </div>
 
-                        <div className="flex flex-col sm:flex-col items-start gap-2 bg-[#e7db7a] p-6 md:p-12 rounded-3xl shadow-xl border border-gray-100">
+                        <div className="flex flex-col sm:flex-col items-start gap-2 bg-[#e7db7a] p-6 md:p-12 rounded-3xl shadow-xl border border-gray-100 gsap-hero">
                             <div className="flex flex-col items-center sm:items-start gap-4 text-center sm:text-left">
                                 <p className="text-sm sm:text-4xl font-semibold text-black">A bottle of our signature syrup</p>
                                 <span className="text-4xl sm:text-6xl font-black text-gray-900">₹150</span>
@@ -42,16 +108,14 @@ export default function ThirdHome() {
 
                     </div>
 
-
-
-
                 </div>
             </div>
 
-
-            <div className="p-12 outline outline-1 w-7/8 rounded-[32px] mx-auto mt-12">
-                <h1 className="font-bold text-3xl ">What is Nannari?</h1>
-                <p>Nannari, also known as Indian sarsaparilla, is a popular herbal drink in South India. It is made from the
+            {/* ABOUT SECTION */}
+            <div className="p-12 outline outline-1 w-7/8 rounded-[32px] mx-auto mt-12 gsap-about">
+                <h1 className="font-bold text-3xl mb-4">What is Nannari?</h1>
+                <p className="leading-relaxed">
+                   Nannari, also known as Indian sarsaparilla, is a popular herbal drink in South India. It is made from the
                    roots of the nannari plant and is known 
                    for its refreshing taste and potential health benefits.
                    Nannari syrup is often mixed with water or soda to create a cooling beverage,
@@ -60,50 +124,41 @@ export default function ThirdHome() {
                 </p>
             </div>
 
+            {/* BENEFITS SECTION */}
             <h1 className="font-bold text-3xl mx-auto p-12 text-center">Benefits of Nannari</h1>
 
-            <div className="flex flex-wrap justify-center gap-2 my-auto mx-auto">
-                <div className="bg-[#e7db7a] w-60 h-60 flex flex-col items-center justify-center gap-2 p-8 rounded-[32px] mx-auto my-2">
-                    <img className="w-1/2 h-1/2 mx-auto" src="/Images_Svgs/refreshingFace.svg" alt="Pouring Syrup" />
-                    <p className="text-center">Refreshing</p>
+            <div className="flex flex-wrap justify-center gap-2 my-auto mx-auto benefits-container">
+                <div className="gsap-benefit">
+                    <Card imgSrc="/Images_Svgs/refreshingFace.svg" imgAlt="Refreshing" text="Refreshing" />
                 </div>
-
-                <Card imgSrc="/Images_Svgs/stomach.svg"
-                imgAlt="Stomach"
-                text="Aids digestion"
-                />
-
-                <Card imgSrc="/Images_Svgs/BodyHeat.svg"
-                imgAlt="BodyHeat"
-                text="Regulates Body Heat"
-                />
-           
+                <div className="gsap-benefit">
+                    <Card imgSrc="/Images_Svgs/stomach.svg" imgAlt="Stomach" text="Aids digestion" />
+                </div>
+                <div className="gsap-benefit">
+                    <Card imgSrc="/Images_Svgs/BodyHeat.svg" imgAlt="BodyHeat" text="Regulates Body Heat" />
+                </div>
             </div>
 
+            {/* HOW TO MAKE SECTION */}
             <h1 className="font-bold text-3xl mx-auto p-12 text-center">How to make Nannari juice?</h1>
 
-            <div className="grid grid-cols-2 w-fit mx-auto gap-4 ">
-                <Card imgSrc="/Images_Svgs/pouring.svg"
-                imgAlt="Pouring Syrup"
-                text="Pour the syrup in a glass"
-                />
-                
-                <Card imgSrc="/Images_Svgs/pouringWater.svg"
-                imgAlt="Water"
-                text="Add water or soda and mix it well"
-                />  
-                <Card imgSrc="/Images_Svgs/LemonAndIce(1).svg"
-                imgAlt="Lemon"
-                text="Add lemon and ice"
-                />  
-                <Card imgSrc="/Images_Svgs/FinishedJuice.svg"
-                imgAlt="Enjoy"
-                text="Enjoy!"
-                />  
-
+            <div className="grid grid-cols-2 w-fit mx-auto gap-4 steps-container">
+                <div className="gsap-step">
+                    <Card imgSrc="/Images_Svgs/pouring.svg" imgAlt="Pouring Syrup" text="Pour the syrup in a glass" />
+                </div>
+                <div className="gsap-step">
+                    <Card imgSrc="/Images_Svgs/pouringWater.svg" imgAlt="Water" text="Add water or soda and mix it well" />  
+                </div>
+                <div className="gsap-step">
+                    <Card imgSrc="/Images_Svgs/LemonAndIce(1).svg" imgAlt="Lemon" text="Add lemon and ice" />  
+                </div>
+                <div className="gsap-step">
+                    <Card imgSrc="/Images_Svgs/FinishedJuice.svg" imgAlt="Enjoy" text="Enjoy!" />  
+                </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center mt-10 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-md mx-auto text-center">
+            {/* CTA SECTION */}
+            <div className="flex flex-col items-center justify-center mt-10 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100 max-w-md mx-auto text-center gsap-cta">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">
                     Ready to make your own?
                 </h3>
@@ -121,9 +176,7 @@ export default function ThirdHome() {
                 </div>
             </div>
 
-        
-
-
+            {/* FOOTER */}
             <footer className="w-full border-t border-gray-100 bg-[#e7db7a] mt-16 pt-8 pb-6 text-center">
                 <div className="max-w-4xl mx-auto px-4 flex flex-col items-center">
 
@@ -144,8 +197,6 @@ export default function ThirdHome() {
 
                 </div>
             </footer>
-
-
 
         </div>
     );
